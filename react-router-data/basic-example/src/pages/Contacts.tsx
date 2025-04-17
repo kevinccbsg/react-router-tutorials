@@ -14,7 +14,6 @@ export default function ContactsPage() {
           name: `${contact.firstName} ${contact.lastName}`,
         }))} />
       </div>
-
       {/* Detail View */}
       <div className="p-8">
         <Outlet />
