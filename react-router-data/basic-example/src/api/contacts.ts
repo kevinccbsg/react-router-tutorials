@@ -24,6 +24,9 @@ interface NewContact {
   avatar?: string;
 }
 
+// simulate a slow network
+// const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export const fetchContacts = async () => {
   const response = await api.get<Contact[]>('/contacts');
   return response.data;

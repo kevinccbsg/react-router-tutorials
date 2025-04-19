@@ -2,9 +2,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import React from 'react';
-import { Form } from 'react-router';
+import { Form, useNavigation } from 'react-router';
 
 const ContactForm: React.FC = () => {
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === 'submitting' && navigation.formAction === '/contacts/new';
   return (
     <div className="max-w-md mx-auto">
       <h1 className="text-2xl font-bold mb-4">Create New Contact</h1>
@@ -33,7 +35,9 @@ const ContactForm: React.FC = () => {
           <Label className="mb-2" htmlFor="avatar">Avatar (Optional)</Label>
           <Input type="url" id="avatar" name="avatar" />
         </div>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? 'Creating...' : 'Create Contact'}
+        </Button>
       </Form>
     </div>
   );
