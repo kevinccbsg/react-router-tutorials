@@ -25,7 +25,7 @@ export default function Sidebar({ contacts }: { contacts: Contact[] }) {
     <>
       <Input placeholder="Search..." className="mb-2" value={search} onChange={handlesearchChange} />
       <Button className="w-full" variant="secondary" asChild>
-        <Link to="/contacts/new">
+        <Link to="/contacts/new" viewTransition>
           New
         </Link>
       </Button>
@@ -38,7 +38,7 @@ export default function Sidebar({ contacts }: { contacts: Contact[] }) {
               variant={contact.id === contactId ? "default" : "ghost"}
               asChild
             >
-              <Link to={`/contacts/${contact.id}`}>
+              <Link to={`/contacts/${contact.id}`} viewTransition>
                 {contact.name}
               </Link>
             </Button>
