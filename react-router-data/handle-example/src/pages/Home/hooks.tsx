@@ -13,3 +13,16 @@ export const useTitleMatch = () => {
   }
   return pageTitle;
 };
+
+interface Breadcrumb {
+  breadcrumbs: string;
+}
+
+export const useBreadcrumbsMatch = () => {
+  const matches = useMatches();
+  const breadcrumbs = matches.map(match => ({
+    text: (match.handle as Breadcrumb).breadcrumbs,
+    url: match.pathname,
+  })).filter(Boolean);
+  return breadcrumbs;
+};

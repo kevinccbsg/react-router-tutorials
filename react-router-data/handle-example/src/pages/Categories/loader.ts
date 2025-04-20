@@ -10,10 +10,12 @@ export const loadCategoryBooks = async ({ params }: LoaderFunctionArgs) => {
 
 export const handleCategoryBooks = {
   title: (params: Params) => `Category ${params.genre}`,
+  breadcrumbs: 'Categories',
 };
 
 export interface CategoryHandle {
   title: (params: Params) => string;
+  breadcrumbs: string;
 }
 
 export default loadCategoryBooks;

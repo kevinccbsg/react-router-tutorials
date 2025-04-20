@@ -12,6 +12,9 @@ const AppRoutes = createBrowserRouter([
     id: "root",
     loader: loadGenres,
     element: <Home />,
+    handle: {
+      breadcrumbs: 'Home',
+    },
     children: [
       {
         path: ":genre",
@@ -25,6 +28,7 @@ const AppRoutes = createBrowserRouter([
         id: "book",
         handle: {
           title: "Book details",
+          breadcrumbs: 'Book details',
         },
         Component: Book,
         loader: loadBook,
