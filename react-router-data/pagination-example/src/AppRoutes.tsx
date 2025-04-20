@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router";
-import Home from "./pages/Home";
-import loadContacts from "./pages/loader";
-import { contactDetailActions } from "./pages/actions";
+import Home from "./pages/Home/Home";
+import loadContacts from "./pages/Home/loader";
+import { contactDetailActions } from "./pages/Home/actions";
 
 const AppRoutes = createBrowserRouter([
   {
